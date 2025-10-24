@@ -1,0 +1,30 @@
+{
+  "name": "tai-chi-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cap:add:android": "cap add android",
+    "cap:sync": "cap sync",
+    "cap:run:android": "cap run android",
+    "cap:build:android": "cap build android",
+    "android:dev": "npm run build && npm run cap:sync && npm run cap:run:android",
+    "android:build": "npm run build && npm run cap:sync && npm run cap:build:android"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "svelte": "^4.2.7",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/core": "^5.5.1",
+    "@capacitor/cli": "^5.5.1"
+  }
+}
+
+
+
