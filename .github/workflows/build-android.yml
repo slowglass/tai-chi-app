@@ -40,6 +40,10 @@ jobs:
       
     - name: Setup Capacitor
       run: |
+        # Remove existing Android platform if it exists
+        if [ -d "android" ]; then
+          rm -rf android
+        fi
         npx cap add android
         npx cap sync android
         

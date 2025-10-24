@@ -3,7 +3,6 @@
   "appName": "Tai Chi",
   "version": "0.0.1",
   "webDir": "dist",
-  "bundledWebRuntime": false,
   "server": {
     "androidScheme": "https"
   },
