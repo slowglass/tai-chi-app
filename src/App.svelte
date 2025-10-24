@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
   import Home from './components/Home.svelte'
   import About from './components/About.svelte'
   
-  let currentPage = 'home'
+  type Page = 'home' | 'about'
   
-  function navigate(page) {
+  let currentPage: Page = 'home'
+  
+  function navigate(page: Page): void {
     currentPage = page
   }
   
   onMount(() => {
     // Initialize Capacitor when the app loads
-    if (typeof window !== 'undefined' && window.Capacitor) {
+    if (typeof window !== 'undefined' && (window as any).Capacitor) {
       console.log('Capacitor is ready!')
     }
   })

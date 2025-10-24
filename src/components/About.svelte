@@ -1,5 +1,11 @@
-<script>
-  let techStack = [
+<script lang="ts">
+  interface TechItem {
+    name: string
+    description: string
+    icon: string
+  }
+  
+  const techStack: TechItem[] = [
     { name: 'Svelte', description: 'Modern reactive framework', icon: '⚡' },
     { name: 'Capacitor', description: 'Cross-platform native runtime', icon: '📱' },
     { name: 'Vite', description: 'Fast build tool', icon: '🚀' },

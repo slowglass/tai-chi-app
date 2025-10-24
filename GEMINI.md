@@ -48,29 +48,37 @@ The project directory contains:
 
 ## Coding Style Guide
 
-### JavaScript/Svelte Style
+### TypeScript/Svelte Style
 - **Indentation**: 2 spaces (no tabs)
 - **Quotes**: Single quotes for strings, double quotes for JSX attributes
 - **Semicolons**: Always use semicolons
 - **Line Length**: Maximum 100 characters
 - **Trailing Commas**: Use trailing commas in objects and arrays
+- **Types**: Explicit typing for function parameters and return values
+- **Interfaces**: Use interfaces for object shapes and data structures
 
 ### Svelte Component Structure
 ```svelte
-<script>
+<script lang="ts">
   // Imports first
   import { onMount } from 'svelte'
   import Component from './Component.svelte'
   
+  // Type definitions
+  interface Props {
+    title: string
+    count?: number
+  }
+  
   // Props and variables
-  export let prop = 'default'
-  let localVar = ''
+  export let prop: string = 'default'
+  let localVar: string = ''
   
   // Reactive statements
-  $: computed = prop + localVar
+  $: computed: string = prop + localVar
   
   // Functions
-  function handleClick() {
+  function handleClick(): void {
     // function body
   }
   

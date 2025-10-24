@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
   
-  let greeting = 'Welcome to Tai Chi!'
+  let greeting: string = 'Welcome to Tai Chi!'
   
   onMount(() => {
     // Add some dynamic content
-    const hour = new Date().getHours()
+    const hour: number = new Date().getHours()
     if (hour < 12) {
       greeting = 'Good Morning! Welcome to Tai Chi'
     } else if (hour < 18) {
