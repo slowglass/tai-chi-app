@@ -43,7 +43,7 @@
     </div>
     
     <div class="version-info">
-      <p><strong>Version:</strong> 1.0.0</p>
+      <p><strong>Version:</strong> 0.0.1</p>
       <p><strong>Build:</strong> Capacitor + Svelte</p>
     </div>
   </div>
