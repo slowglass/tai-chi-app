@@ -117,6 +117,15 @@ The project directory contains:
 ## Styling Strategy
 - **Responsive Design**: The application is designed to be responsive without relying on `@media` queries for different screen sizes. A single set of styles applies across all devices, ensuring a consistent look and feel.
 
+## Release Process
+To release a new version, follow these steps:
+1.  Update Changelog with a summary of the changes that have been made.
+2.  Update version from `x.y.z-SNAPSHOT` to `x.y.z` in `package.json`.
+3.  Commit changes to Git with a summary as the commit message (e.g., `chore(release): release vX.Y.Z`).
+4.  Create and push tag `vX.Y.Z` to GitHub.
+5.  Update version from `x.y.z` to `x.y.(z+1)-SNAPSHOT` in `package.json`.
+6.  Commit version update and push to GitHub (e.g., `chore(release): begin vX.Y.(Z+1) development`).
+
 ### Git Commit Messages
 - **Format**: `type(scope): description`
 - **Types**: feat, fix, docs, style, refactor, test, chore
