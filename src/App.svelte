@@ -63,7 +63,7 @@
   }
   
   header {
-    background: rgba(245, 241, 232, 0.9);
+    background: #8C5A03;
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     border-bottom: 2px solid #d4c4a8;
