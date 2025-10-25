@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.0.4 - 2025-10-25
+### Features
+- Added iOS build to GitHub Actions workflow.
+
+### Chores
+- Updated Capacitor packages to v7.4.4.
+- Renamed GitHub Actions workflow from build-android.yml to build-mobile.yml.
+- Released v0.0.4.
+
 ## v0.0.3 - 2025-10-25
 ### Documentation
 - Updated GEMINI.md with release description instructions.
