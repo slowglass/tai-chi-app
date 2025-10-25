@@ -126,6 +126,19 @@ To release a new version, follow these steps:
 5.  Update version from `x.y.z` to `x.y.(z+1)-SNAPSHOT` in `package.json`.
 6.  Commit version update and push to GitHub (e.g., `chore(release): begin vX.Y.(Z+1) development`).
 
+Please always include at the bottom of the release description: ```
+## Installation
+1. Download the APK file
+2. Enable "Install from unknown sources" on your Android device
+3. Install the APK
+
+### System Requirements
+- Android 5.1 (API level 22) or higher
+
+
+**Full Changelog**: https://github.com/slowglass/tai-chi-app/blob/main/CHANGELOG.md
+```
+
 ### Git Commit Messages
 - **Format**: `type(scope): description`
 - **Types**: feat, fix, docs, style, refactor, test, chore
