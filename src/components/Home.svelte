@@ -152,25 +152,7 @@
     font-family: "Kasuga Brush W00 One";
   }
   
-  @media (max-width: 768px) {
-    .home-container {
-      padding: 0.5rem;
-    }
-    
-    .card {
-      padding: 1rem;
-      min-height: 160px;
-    }
-    
-    .card-icon {
-      width: 152px;
-      height: 152px;
-    }
-    
-    .card-title {
-      font-size: 3rem;
-    }
-  }
+
 </style>
 
 

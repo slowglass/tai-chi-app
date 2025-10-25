@@ -114,6 +114,9 @@ The project directory contains:
 - **Properties**: Alphabetical order when possible
 - **Values**: Use meaningful units (rem, em, %)
 
+## Styling Strategy
+- **Responsive Design**: The application is designed to be responsive without relying on `@media` queries for different screen sizes. A single set of styles applies across all devices, ensuring a consistent look and feel.
+
 ### Git Commit Messages
 - **Format**: `type(scope): description`
 - **Types**: feat, fix, docs, style, refactor, test, chore

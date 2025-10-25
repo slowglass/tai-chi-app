@@ -147,23 +147,7 @@
     color: #6b5b47;
   }
   
-  @media (max-width: 768px) {
-    .page-container {
-      padding: 1rem;
-    }
-    
-    .content-card {
-      padding: 1.5rem;
-    }
-    
-    h2 {
-      font-size: 1.5rem;
-    }
-    
-    .tech-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+
 </style>
 
 

@@ -103,19 +103,7 @@ h1 {
     justify-content: center;
   }
   
-  @media (max-width: 768px) {
-header {
-      padding: 0.5rem;
-    }
-    
-    h1 {
-      font-size: 5rem;
-    }
-    
-    .content {
-      padding: 1rem;
-    }
-  }
+
 </style>
 
 

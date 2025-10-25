@@ -75,17 +75,5 @@
     margin-bottom: 0.5rem;
   }
   
-  @media (max-width: 768px) {
-    .page-container {
-      padding: 1rem;
-    }
-    
-    .content-card {
-      padding: 1.5rem;
-    }
-    
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
+
 </style>
