@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #f5f1e8;
+    background: #C9B177;
     min-height: 100vh;
   }
   
@@ -72,7 +72,7 @@
 h1 {
     color: #8b7355;
     margin: 0 0 1rem 0;
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 300;
     text-align: center;
     font-family: "Kasuga Brush W00 One";
@@ -91,7 +91,7 @@ h1 {
   
   .back-button:hover {
     background: #8b7355;
-    color: #f5f1e8;
+    color: #C9B117;
   }
   
   
