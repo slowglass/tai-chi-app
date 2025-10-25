@@ -142,10 +142,6 @@
     font-size: 1.3rem;
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
-    background: rgba(245, 241, 232, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(139, 115, 85, 0.3);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -171,7 +167,6 @@
     
     .card-title {
       font-size: 1.1rem;
-      padding: 0.4rem 0.8rem;
     }
   }
 </style>
