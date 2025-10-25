@@ -24,17 +24,23 @@
 
 <main>
   {#if $currentPage === 'home'}
-    <header>
-      <h1>Tai Chi</h1>
+    <header class="home-header">
+      <h1 class="kasuga-brush-font">Tai Chi</h1>
     </header>
     <div class="content">
       <Home on:navigate={navigate} />
     </div>
   {:else}
     <header>
-      <button class="back-button" on:click={() => currentPage.set('home')}>
-        ← Back to Home
-      </button>
+      <div style="flex-grow: 1; text-align: center;">
+        {#if $currentPage === 'swimming-dragon'}
+          <h1 class="kasuga-brush-font">Swimming Dragon</h1>
+        {:else if $currentPage === 'timer'}
+          <h1 class="kasuga-brush-font">Timer</h1>
+        {:else if $currentPage === 'about'}
+          <h1 class="kasuga-brush-font">About</h1>
+        {/if}
+      </div>
     </header>
     <div class="content">
       {#if $currentPage === 'swimming-dragon'}
@@ -68,28 +74,11 @@
     backdrop-filter: blur(10px);
     padding: 0.5rem 1rem;
     border-bottom: 2px solid #d4c4a8;
+    display: flex; /* Make header a flex container */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center the single item */
   }
-  
-h1 {
-    color: #8b7355;
-    margin: 0 0 0 0;
-    font-size: 7rem;
-    font-weight: 300;
-    text-align: center;
-    font-family: "Kasuga Brush W00 One";
-  }
-  
-  .back-button {
-    background: #d4c4a8;
-    border: 2px solid #8b7355;
-    color: #8b7355;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  
+
   .back-button:hover {
     background: #8b7355;
     color: #C9B117;

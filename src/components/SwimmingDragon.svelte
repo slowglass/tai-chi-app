@@ -3,20 +3,26 @@
 </script>
 
 <div class="page-container">
-  <div class="content-card">
-    <h2>Swimming Dragon</h2>
-    <div class="yin-yang" style="animation-name: yin-yang-anticlockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;"><svg xmlns="http://www.w3.org/2000/svg" height="256" width="256" viewBox="-8 -8 16 16" style="animation-name: yin-yang-clockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;"> <g><path d="m0-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 1 1 0-14z" fill="#ccf"></path> <path d="m0-7a7 7 0 1 1 0 14 3.5 3.5 0 1 1 0-7 3.5 3.5 0 1 0 0-7z" fill="#004"></path> <circle cy="-3.5" r="1.1" fill="#004"></circle><circle cy="3.5" r="1.1" fill="#ccf"></circle></g></svg></div>
-    
-
-  </div>
+    <div class="yin-yang" style="animation-name: yin-yang-anticlockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;">
+      <svg xmlns="http://www.w3.org/2000/svg" height="256" width="256" viewBox="-8 -8 16 16" style="animation-name: yin-yang-clockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;">
+        <g>
+          <path d="m0-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 1 1 0-14z" fill="#ccf"></path>
+          <path d="m0-7a7 7 0 1 1 0 14 3.5 3.5 0 1 1 0-7 3.5 3.5 0 1 0 0-7z" fill="#004"></path>
+          <circle cy="-3.5" r="1.1" fill="#004"></circle>
+          <circle cy="3.5" r="1.1" fill="#ccf"></circle>
+        </g>
+      </svg>
+    </div>
 </div>
 
 <style>
   .page-container {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    height: 100%; /* Ensure it takes full height to allow vertical centering */
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
   }
   
   .content-card {

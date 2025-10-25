@@ -28,3 +28,12 @@ body {
 .kasuga-brush-font {
     font-family: "Kasuga Brush W00 One";
 }
+
+header h1 {
+    color: #35230e;
+    margin: 0 0 0 0;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    font-family: "Kasuga Brush W00 One";
+}
