@@ -72,7 +72,7 @@
 h1 {
     color: #8b7355;
     margin: 0 0 1rem 0;
-    font-size: 2.4rem;
+    font-size: 5rem;
     font-weight: 300;
     text-align: center;
     font-family: "Kasuga Brush W00 One";
@@ -109,7 +109,7 @@ h1 {
     }
     
     h1 {
-      font-size: 1.5rem;
+      font-size: 3rem;
     }
     
     .content {

@@ -130,7 +130,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
-    opacity: 0.8;
+    opacity: 0.4;
   }
   
   .card:hover .card-icon {
@@ -140,7 +140,7 @@
   .card-title {
     color: #8b7355;
     margin: 0;
-    font-size: 4.3rem;
+    font-size: 2rem;
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
     position: absolute;
@@ -168,7 +168,7 @@
     }
     
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
     }
   }
 </style>
