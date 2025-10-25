@@ -69,12 +69,13 @@
     border-bottom: 2px solid #d4c4a8;
   }
   
-  h1 {
+h1 {
     color: #8b7355;
     margin: 0 0 1rem 0;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 300;
     text-align: center;
+    font-family: "Kasuga Brush W00 One";
   }
   
   .back-button {

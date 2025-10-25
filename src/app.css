@@ -15,5 +15,16 @@ body {
   min-height: 100vh;
 }
 
+@font-face {
+    font-family: "Kasuga Brush W00 One";
+    src: url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.eot");
+    src: url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/38f6e103a2a514ef253b27c8b33d2cde.svg#Kasuga Brush W00 One")format("svg");
+}
 
-
+.kasuga-brush-font {
+    font-family: "Kasuga Brush W00 One";
+}
