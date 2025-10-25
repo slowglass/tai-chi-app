@@ -154,7 +154,7 @@
   
   @media (max-width: 768px) {
     .home-container {
-      padding: 1rem;
+      padding: 0.5rem;
     }
     
     .card {
@@ -168,7 +168,7 @@
     }
     
     .card-title {
-      font-size: 1.5rem;
+      font-size: 3rem;
     }
   }
 </style>

@@ -65,13 +65,13 @@
   header {
     background: #8C5A03;
     backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border-bottom: 2px solid #d4c4a8;
   }
   
 h1 {
     color: #8b7355;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0 0;
     font-size: 7rem;
     font-weight: 300;
     text-align: center;
@@ -97,19 +97,19 @@ h1 {
   
   .content {
     flex: 1;
-    padding: 2rem;
+    padding: 0rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   @media (max-width: 768px) {
-    header {
-      padding: 1rem;
+header {
+      padding: 0.5rem;
     }
     
     h1 {
-      font-size: 3rem;
+      font-size: 5rem;
     }
     
     .content {
