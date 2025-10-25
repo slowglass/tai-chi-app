@@ -148,6 +148,7 @@
     transform: translate(-50%, -50%);
     white-space: nowrap;
     z-index: 3;
+    font-family: "Kasuga Brush W00 One";
   }
   
   @media (max-width: 768px) {
