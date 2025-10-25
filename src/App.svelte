@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { writable } from 'svelte/store'
   import Home from './components/Home.svelte'
   import SwimmingDragon from './components/SwimmingDragon.svelte'
   import Timer from './components/Timer.svelte'
@@ -7,10 +8,10 @@
   
   type Page = 'home' | 'swimming-dragon' | 'timer' | 'about'
   
-  let currentPage: Page = 'home'
+  const currentPage = writable<Page>('home')
   
-  function navigate(page: Page): void {
-    currentPage = page
+  function navigate(event: CustomEvent<Page>): void {
+    currentPage.set(event.detail);
   }
   
   onMount(() => {
@@ -22,7 +23,7 @@
 </script>
 
 <main>
-  {#if currentPage === 'home'}
+  {#if $currentPage === 'home'}
     <header>
       <h1>Tai Chi</h1>
     </header>
@@ -31,16 +32,16 @@
     </div>
   {:else}
     <header>
-      <button class="back-button" on:click={() => navigate('home')}>
+      <button class="back-button" on:click={() => currentPage.set('home')}>
         ← Back to Home
       </button>
     </header>
     <div class="content">
-      {#if currentPage === 'swimming-dragon'}
+      {#if $currentPage === 'swimming-dragon'}
         <SwimmingDragon />
-      {:else if currentPage === 'timer'}
+      {:else if $currentPage === 'timer'}
         <Timer />
-      {:else if currentPage === 'about'}
+      {:else if $currentPage === 'about'}
         <About />
       {/if}
     </div>

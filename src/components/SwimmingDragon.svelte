@@ -1,22 +1,13 @@
 <script lang="ts">
-  // Swimming Dragon placeholder page
+  // No imports needed for the SVG
 </script>
 
 <div class="page-container">
   <div class="content-card">
     <h2>Swimming Dragon</h2>
-    <p>This is a placeholder page for the Swimming Dragon feature.</p>
-    <p>Future functionality will be implemented here.</p>
+    <div class="yin-yang" style="animation-name: yin-yang-anticlockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;"><svg xmlns="http://www.w3.org/2000/svg" height="256" width="256" viewBox="-8 -8 16 16" style="animation-name: yin-yang-clockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;"> <g><path d="m0-7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 1 1 0-14z" fill="#ccf"></path> <path d="m0-7a7 7 0 1 1 0 14 3.5 3.5 0 1 1 0-7 3.5 3.5 0 1 0 0-7z" fill="#004"></path> <circle cy="-3.5" r="1.1" fill="#004"></circle><circle cy="3.5" r="1.1" fill="#ccf"></circle></g></svg></div>
     
-    <div class="feature-info">
-      <h3>Coming Soon</h3>
-      <ul>
-        <li>Swimming Dragon exercises</li>
-        <li>Step-by-step instructions</li>
-        <li>Video demonstrations</li>
-        <li>Progress tracking</li>
-      </ul>
-    </div>
+
   </div>
 </div>
 
@@ -73,6 +64,45 @@
   .feature-info li {
     margin-bottom: 0.5rem;
   }
-  
 
+  /* Yin Yang Spinner styling */
+  .yin-yang {
+    width: 256px;
+    height: 256px;
+    margin: 0px auto;
+    padding: 0px;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+
+  .yin-yang svg {
+    width: 256px;
+    height: 256px;
+    margin: 0px;
+    padding: 0px;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+
+  .yin-yang.spinning {
+    animation-name: yin-yang-anticlockwise-spin;
+  }
+
+  .yin-yang.spinning svg {
+    animation-name: yin-yang-clockwise-spin;
+  }
+
+  @keyframes yin-yang-anticlockwise-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+
+  @keyframes yin-yang-clockwise-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 </style>
