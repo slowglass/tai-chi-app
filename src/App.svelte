@@ -1,9 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import Home from './components/Home.svelte'
+  import SwimmingDragon from './components/SwimmingDragon.svelte'
+  import Timer from './components/Timer.svelte'
   import About from './components/About.svelte'
   
-  type Page = 'home' | 'about'
+  type Page = 'home' | 'swimming-dragon' | 'timer' | 'about'
   
   let currentPage: Page = 'home'
   
@@ -20,31 +22,29 @@
 </script>
 
 <main>
-  <header>
-    <h1>Tai Chi</h1>
-    <nav>
-      <button 
-        class:active={currentPage === 'home'} 
-        on:click={() => navigate('home')}
-      >
-        Home
+  {#if currentPage === 'home'}
+    <header>
+      <h1>Tai Chi</h1>
+    </header>
+    <div class="content">
+      <Home on:navigate={navigate} />
+    </div>
+  {:else}
+    <header>
+      <button class="back-button" on:click={() => navigate('home')}>
+        ← Back to Home
       </button>
-      <button 
-        class:active={currentPage === 'about'} 
-        on:click={() => navigate('about')}
-      >
-        About
-      </button>
-    </nav>
-  </header>
-  
-  <div class="content">
-    {#if currentPage === 'home'}
-      <Home />
-    {:else if currentPage === 'about'}
-      <About />
-    {/if}
-  </div>
+    </header>
+    <div class="content">
+      {#if currentPage === 'swimming-dragon'}
+        <SwimmingDragon />
+      {:else if currentPage === 'timer'}
+        <Timer />
+      {:else if currentPage === 'about'}
+        <About />
+      {/if}
+    </div>
+  {/if}
 </main>
 
 <style>
@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #f5f1e8;
     min-height: 100vh;
   }
   
@@ -63,46 +63,36 @@
   }
   
   header {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(245, 241, 232, 0.9);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid #d4c4a8;
   }
   
   h1 {
-    color: white;
+    color: #8b7355;
     margin: 0 0 1rem 0;
     font-size: 2rem;
     font-weight: 300;
     text-align: center;
   }
   
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  button {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+  .back-button {
+    background: #d4c4a8;
+    border: 2px solid #8b7355;
+    color: #8b7355;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
     font-size: 1rem;
+    transition: all 0.3s ease;
   }
   
-  button:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+  .back-button:hover {
+    background: #8b7355;
+    color: #f5f1e8;
   }
   
-  button.active {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.6);
-  }
   
   .content {
     flex: 1;
@@ -119,15 +109,6 @@
     
     h1 {
       font-size: 1.5rem;
-    }
-    
-    nav {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    button {
-      width: 200px;
     }
     
     .content {

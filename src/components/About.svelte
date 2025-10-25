@@ -13,8 +13,8 @@
   ]
 </script>
 
-<div class="about-container">
-  <div class="card">
+<div class="page-container">
+  <div class="content-card">
     <h2>About This App</h2>
     <p>This Android application demonstrates modern web-to-native development using cutting-edge technologies.</p>
     
@@ -50,21 +50,23 @@
 </div>
 
 <style>
-  .about-container {
+  .page-container {
     width: 100%;
     max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
   
-  .card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
+  .content-card {
+    background: url('../assets/images/cards/Paper.png') center/cover;
+    border: 3px solid #8b7355;
+    border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(139, 115, 85, 0.2);
   }
   
   h2 {
-    color: #333;
+    color: #8b7355;
     margin: 0 0 1rem 0;
     font-size: 2rem;
     font-weight: 300;
@@ -72,7 +74,7 @@
   }
   
   p {
-    color: #666;
+    color: #6b5b47;
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0 0 2rem 0;
@@ -83,7 +85,7 @@
   }
   
   h3 {
-    color: #667eea;
+    color: #8b7355;
     margin: 0 0 1rem 0;
     font-size: 1.3rem;
     font-weight: 400;
@@ -96,11 +98,11 @@
   }
   
   .tech-item {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(139, 115, 85, 0.1);
     border-radius: 15px;
     padding: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(139, 115, 85, 0.2);
   }
   
   .tech-icon {
@@ -110,14 +112,14 @@
   
   .tech-item h4 {
     margin: 0 0 0.5rem 0;
-    color: #667eea;
+    color: #8b7355;
     font-size: 1.1rem;
   }
   
   .tech-item p {
     margin: 0;
     font-size: 0.9rem;
-    color: #555;
+    color: #6b5b47;
   }
   
   ul {
@@ -127,12 +129,12 @@
   
   li {
     padding: 0.5rem 0;
-    color: #666;
+    color: #6b5b47;
     font-size: 1rem;
   }
   
   .version-info {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(139, 115, 85, 0.1);
     border-radius: 15px;
     padding: 1rem;
     margin-top: 2rem;
@@ -142,10 +144,15 @@
   .version-info p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
+    color: #6b5b47;
   }
   
   @media (max-width: 768px) {
-    .card {
+    .page-container {
+      padding: 1rem;
+    }
+    
+    .content-card {
       padding: 1.5rem;
     }
     

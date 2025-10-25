@@ -1,129 +1,158 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { createEventDispatcher } from 'svelte'
+  import swimmingDragonIcon from '../assets/images/cards/K7.png'
+  import timerIcon from '../assets/images/cards/K6.png'
+  import aboutIcon from '../assets/images/cards/K12.png'
+  import paperBackground from '../assets/images/cards/Paper.png'
   
-  let greeting: string = 'Welcome to Tai Chi!'
+  const dispatch = createEventDispatcher()
   
-  onMount(() => {
-    // Add some dynamic content
-    const hour: number = new Date().getHours()
-    if (hour < 12) {
-      greeting = 'Good Morning! Welcome to Tai Chi'
-    } else if (hour < 18) {
-      greeting = 'Good Afternoon! Welcome to Tai Chi'
-    } else {
-      greeting = 'Good Evening! Welcome to Tai Chi'
+  interface Card {
+    id: string
+    title: string
+    icon: string
+    tint: string
+    page: 'swimming-dragon' | 'timer' | 'about'
+  }
+  
+  const cards: Card[] = [
+    {
+      id: 'swimming-dragon',
+      title: 'Swimming Dragon',
+      icon: swimmingDragonIcon,
+      tint: 'brightness(0) saturate(100%) invert(27%) sepia(97%) saturate(7471%) hue-rotate(356deg)',
+      page: 'swimming-dragon'
+    },
+    {
+      id: 'timer',
+      title: 'Timer',
+      icon: timerIcon,
+      tint: 'brightness(0) saturate(100%) invert(48%) sepia(98%) saturate(2476%) hue-rotate(86deg)',
+      page: 'timer'
+    },
+    {
+      id: 'about',
+      title: 'About',
+      icon: aboutIcon,
+      tint: 'brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(5969%) hue-rotate(211deg)',
+      page: 'about'
     }
-  })
+  ]
+  
+  function handleCardClick(page: string): void {
+    dispatch('navigate', page)
+  }
 </script>
 
 <div class="home-container">
-  <div class="card">
-    <h2>{greeting}</h2>
-    <p>This is a modern Android app built with Svelte and Capacitor.</p>
-    <div class="features">
-      <div class="feature">
-        <h3>🌱 Modern</h3>
-        <p>Built with the latest web technologies</p>
+  <div class="cards-grid">
+    {#each cards as card}
+      <div class="card" on:click={() => handleCardClick(card.page)} on:keydown={(e) => e.key === 'Enter' && handleCardClick(card.page)} role="button" tabindex="0">
+        <div class="card-background"></div>
+        <div class="card-content">
+          <img src={card.icon} alt={card.title} class="card-icon" style="filter: {card.tint}" />
+          <h3 class="card-title">{card.title}</h3>
+        </div>
       </div>
-      <div class="feature">
-        <h3>📱 Native</h3>
-        <p>Runs as a native Android app</p>
-      </div>
-      <div class="feature">
-        <h3>⚡ Fast</h3>
-        <p>Optimized for performance</p>
-      </div>
-    </div>
-    <button class="cta-button">
-      Get Started
-    </button>
+    {/each}
   </div>
 </div>
 
 <style>
   .home-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
+    position: relative;
+    background: url('../assets/images/cards/Paper.png') center/cover;
+    border: 3px solid #8b7355;
+    border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(139, 115, 85, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(139, 115, 85, 0.3);
+    border-color: #6b5b47;
+  }
+  
+  .card:active {
+    transform: translateY(0);
+  }
+  
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/images/cards/Paper.png') center/cover;
+    border-radius: 12px;
+    opacity: 0.9;
+  }
+  
+  .card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   
-  h2 {
-    color: #333;
-    margin: 0 0 1rem 0;
-    font-size: 2rem;
-    font-weight: 300;
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
   }
   
-  p {
-    color: #666;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0 0 2rem 0;
+  .card:hover .card-icon {
+    transform: scale(1.1);
   }
   
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
-  
-  .feature {
-    padding: 1rem;
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 15px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-  }
-  
-  .feature h3 {
-    margin: 0 0 0.5rem 0;
-    color: #667eea;
-    font-size: 1.2rem;
-  }
-  
-  .feature p {
+  .card-title {
+    color: #8b7355;
     margin: 0;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .cta-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-  }
-  
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
   }
   
   @media (max-width: 768px) {
+    .home-container {
+      padding: 1rem;
+    }
+    
     .card {
       padding: 1.5rem;
+      min-height: 100px;
     }
     
-    h2 {
-      font-size: 1.5rem;
+    .card-icon {
+      width: 50px;
+      height: 50px;
     }
     
-    .features {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+    .card-title {
+      font-size: 1.1rem;
     }
   }
 </style>
