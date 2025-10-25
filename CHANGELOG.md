@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.0.3 - 2025-10-25
+### Documentation
+- Updated GEMINI.md with release description instructions.
+
+### Chores
+- Released v0.0.3.
+
 ## v0.0.2 - 2025-10-25
 ### Features
 - Implemented card-based home page with paper theme and tinted icons.
