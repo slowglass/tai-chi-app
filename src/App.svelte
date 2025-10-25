@@ -11,7 +11,13 @@
   const currentPage = writable<Page>('home')
   
   function navigate(event: CustomEvent<Page>): void {
-    currentPage.set(event.detail);
+    const newPage = event.detail;
+    currentPage.set(newPage);
+    if (newPage !== 'home') {
+      history.pushState({ page: newPage }, '', `#${newPage}`);
+    } else {
+      history.replaceState({ page: newPage }, '', '#'); // Replace state for home
+    }
   }
   
   onMount(() => {
@@ -19,6 +25,35 @@
     if (typeof window !== 'undefined' && (window as any).Capacitor) {
       console.log('Capacitor is ready!')
     }
+
+    // Handle browser back/forward navigation
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state && event.state.page) {
+        currentPage.set(event.state.page);
+      } else {
+        currentPage.set('home'); // Default to home if no state is found
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    // Initial history state setup
+    if (window.location.hash) {
+      const initialPage = window.location.hash.substring(1) as Page;
+      if (['swimming-dragon', 'timer', 'about'].includes(initialPage)) {
+        currentPage.set(initialPage);
+        history.replaceState({ page: initialPage }, '', window.location.hash);
+      } else {
+        currentPage.set('home');
+        history.replaceState({ page: 'home' }, '', '#');
+      }
+    } else {
+      history.replaceState({ page: 'home' }, '', '#');
+    }
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
   })
 </script>
 
