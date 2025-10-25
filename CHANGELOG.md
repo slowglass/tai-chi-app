@@ -1,3 +1,23 @@
+## v0.0.7 - 2025-10-25
+### Features
+- Removed iOS project files and support.
+- Added iOS build to GitHub Actions workflow and renamed to build-mobile.yml.
+- Added iOS platform and updated Capacitor packages.
+
+### Refactor
+- Updated SwimmingDragon component (removed GA script, replaced SVG, removed text, centered).
+- Adjusted global header H1 styling and moved rules to app.css.
+- Updated workflow name after removing iOS support.
+
+### Fixes
+- Resolved EJSONPARSE error.
+- Corrected Podfile path for iOS build.
+- Updated Java version to 21 in GitHub Actions workflow.
+- Updated Node.js version to 20 in GitHub Actions workflow.
+
+### Documentation
+- Clarified release process in GEMINI.md.
+
 # Changelog
 
 ## v0.0.3 - 2025-10-25
