@@ -122,7 +122,7 @@ To release a new version, follow these steps:
 1.  Update Changelog with a summary of the changes that have been made.
 2.  Update version from `x.y.z-SNAPSHOT` to `x.y.z` in `package.json`.
 3.  Commit changes to Git with a summary as the commit message (e.g., `chore(release): release vX.Y.Z`).
-4.  Create and push tag `vX.Y.Z` to GitHub.
+4. Create and push tag `vX.Y.Z` to GitHub. Ensure the tag message includes the relevant changelog entries and the standard release description.
 5.  Update version from `x.y.z` to `x.y.(z+1)-SNAPSHOT` in `package.json`.
 6.  Commit version update and push to GitHub (e.g., `chore(release): begin vX.Y.(Z+1) development`).
 
