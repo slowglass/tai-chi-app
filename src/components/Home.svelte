@@ -74,17 +74,18 @@
   
   .card {
     position: relative;
-    background: url('../assets/images/cards/Paper.png') center/cover;
+    background: transparent;
     border: 3px solid #8b7355;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-height: 120px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(139, 115, 85, 0.2);
+    overflow: hidden;
   }
   
   .card:hover {
@@ -106,26 +107,33 @@
     background: url('../assets/images/cards/Paper.png') center/cover;
     border-radius: 12px;
     opacity: 0.9;
+    z-index: 1;
   }
   
   .card-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    height: 100%;
   }
   
   .card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
+    width: 182px;
+    height: 182px;
     transition: transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
   }
   
   .card:hover .card-icon {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
   }
   
   .card-title {
@@ -133,7 +141,17 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+    background: rgba(245, 241, 232, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 115, 85, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: 3;
   }
   
   @media (max-width: 768px) {
@@ -142,17 +160,18 @@
     }
     
     .card {
-      padding: 1.5rem;
-      min-height: 100px;
+      padding: 1rem;
+      min-height: 160px;
     }
     
     .card-icon {
-      width: 50px;
-      height: 50px;
+      width: 152px;
+      height: 152px;
     }
     
     .card-title {
       font-size: 1.1rem;
+      padding: 0.4rem 0.8rem;
     }
   }
 </style>
