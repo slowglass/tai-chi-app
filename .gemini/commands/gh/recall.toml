@@ -1,0 +1,8 @@
+description = "Removes an existing release."
+
+prompt = """
+## Recall Process
+To release a new version, follow these steps:
+1. Remove tag `x.y.z` both locally and remotely (if it exists)
+2. If version number of the app is `x.y.z` change it to ``x.y.z-SNAPSHOT` 
+"""
