@@ -1,10 +1,3 @@
-<script lang="ts">
-  import { onMount } from 'svelte'
-  import { writable } from 'svelte/store'
-  import Home from './components/Home.svelte'
-  import SwimmingDragon from './components/SwimmingDragon.svelte'
-  import Timer from './components/Timer.svelte'
-  import About from './components/About.svelte'
   
   type Page = 'home' | 'swimming-dragon' | 'timer' | 'about'
   
@@ -46,8 +39,7 @@
       } else {
         currentPage.set('home');
         history.replaceState({ page: 'home' }, '', '#');
-      }
-    } else {
+      }n    } else {
       history.replaceState({ page: 'home' }, '', '#');
     }
 
@@ -127,8 +119,6 @@
     align-items: center;
     justify-content: center;
   }
-  
-
 </style>
 
 

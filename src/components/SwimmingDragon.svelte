@@ -1,8 +1,29 @@
 <script lang="ts">
-  // No imports needed for the SVG
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function handleTouchStart(event: TouchEvent) {
+    touchstartX = event.changedTouches[0].screenX;
+  }
+
+  function handleTouchEnd(event: TouchEvent) {
+    touchendX = event.changedTouches[0].screenX;
+    handleSwipe();
+  }
+
+  function handleSwipe() {
+    if (touchendX < touchstartX) {
+      // Left swipe
+      dispatch('navigate', 'home');
+    }
+  }
 </script>
 
-<div class="page-container">
+<div class="page-container" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
     <div class="yin-yang" style="animation-name: yin-yang-anticlockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;">
       <svg xmlns="http://www.w3.org/2000/svg" height="256" width="256" viewBox="-8 -8 16 16" style="animation-name: yin-yang-clockwise-spin; animation-duration: 4s; animation-timing-function: linear; animation-iteration-count: infinite; animation-play-state: paused; width: 256px; height: 256px; margin: 0px; padding: 0px;">
         <g>
