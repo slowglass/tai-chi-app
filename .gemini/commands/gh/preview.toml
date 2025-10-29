@@ -3,5 +3,6 @@ prompt = """
 ## Preview Process
 So long as the vesion number has a SNAPSHOT at the end.
 1. Remove tag `vX.Y.Z-SNAPSHOT` from both local git repo and the remote git repo
-2.  Create and push tag `vX.Y.Z-SNAPSHOT` to GitHub. 
+2. Use GitHub CLI to remove the release `vX.Y.Z-SNAPSHOT`
+3.  Create and push tag `vX.Y.Z-SNAPSHOT` to GitHub. 
 """
