@@ -55,9 +55,43 @@
       window.removeEventListener('popstate', handlePopState);
     };
   })
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  function handleTouchStart(event: TouchEvent) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  }
+
+  function handleTouchMove(event: TouchEvent) {
+    touchEndX = event.touches[0].clientX;
+    touchEndY = event.touches[0].clientY;
+  }
+
+  function handleTouchEnd() {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    // Ensure it's a horizontal swipe and not a vertical scroll
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      // Swipe left to go back
+      if (deltaX < -50) { // 50px threshold
+        history.back();
+      }
+    }
+
+    // Reset values
+    touchStartX = 0;
+    touchStartY = 0;
+    touchEndX = 0;
+    touchEndY = 0;
+  }
 </script>
 
-<main>
+<main on:touchstart={handleTouchStart} on:touchmove={handleTouchMove} on:touchend={handleTouchEnd}>
   {#if $currentPage === 'home'}
     <header class="home-header">
       <h1 class="kasuga-brush-font">Tai Chi</h1>
